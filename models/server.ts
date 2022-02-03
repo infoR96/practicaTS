@@ -16,14 +16,15 @@ class Server {
         this.port = process.env.PORT || '8000';
         this.middlewares();
         this.routes();
+        this.dbConnection
     }
 
     async dbConnection(){
         try {
             await db.authenticate();
             console.log('DB Online');
-        }catch(e){
-            throw new Error('ERROR');
+        }catch(n){
+            console.error(n);
         }
     } 
 

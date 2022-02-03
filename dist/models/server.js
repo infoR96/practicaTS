@@ -25,6 +25,7 @@ class Server {
         this.port = process.env.PORT || '8000';
         this.middlewares();
         this.routes();
+        this.dbConnection;
     }
     dbConnection() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -32,8 +33,8 @@ class Server {
                 yield connection_1.default.authenticate();
                 console.log('DB Online');
             }
-            catch (e) {
-                throw new Error('ERROR');
+            catch (n) {
+                console.error(n);
             }
         });
     }

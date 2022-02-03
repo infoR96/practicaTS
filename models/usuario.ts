@@ -2,10 +2,10 @@ import { DataTypes } from "sequelize";
 import db from "../db/connection";
 
 const Usuario = db.define('Usuario',{
-    nombre:{
+    user:{
         type:DataTypes.STRING
     },
-    apellido:{
+    pass:{
         type:DataTypes.STRING
     },
     estado:{
