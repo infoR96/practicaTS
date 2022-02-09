@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import db from "../db/connection";
 
-const Usuario = db.define('Carga',{
+const Carga = db.define('Carga',{
     ruc:{
         type:DataTypes.STRING
     },
@@ -9,8 +9,18 @@ const Usuario = db.define('Carga',{
         type:DataTypes.STRING
     },
     contacto:{
-        type:DataTypes.BOOLEAN
-    }
+        type:DataTypes.STRING
+    },
+    tonelaje:{
+        type:DataTypes.DECIMAL
+    },
+    ticket:{
+        type:DataTypes.STRING
+    },
+    acopiador:{
+        type:DataTypes.STRING
+     }
+
 });
 
-export default Usuario;
+export default Carga;
