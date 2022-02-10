@@ -18,19 +18,19 @@ const postCarga = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     res.json('test succesfuly');
     try {
-        // const existeTicket = await Carga.findOne({
-        //     where:{
-        //         ticket:body.ticket
-        //     }}
-        // )
-        // if(existeTicket){
-        //     return res.status(400).json({
-        //         mdg:'ya existe ese usuario'
-        //     })
-        // }
+        const existeTicket = yield Carga_1.default.findOne({
+            where: {
+                ticket: body.ticket
+            }
+        });
+        if (existeTicket) {
+            return res.status(400).json({
+                mdg: 'ya existe ese usuario'
+            });
+        }
+        console.log('antes de carga.body', body);
         const carga = Carga_1.default.build(body);
         yield carga.save();
-        res.json(carga);
     }
     catch (error) {
         console.error(error);

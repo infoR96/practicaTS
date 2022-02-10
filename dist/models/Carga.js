@@ -16,7 +16,7 @@ const Carga = connection_1.default.define('Carga', {
         type: sequelize_1.DataTypes.STRING
     },
     tonelaje: {
-        type: sequelize_1.DataTypes.DECIMAL
+        type: sequelize_1.DataTypes.STRING
     },
     ticket: {
         type: sequelize_1.DataTypes.STRING

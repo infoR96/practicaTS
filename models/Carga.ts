@@ -12,7 +12,7 @@ const Carga = db.define('Carga',{
         type:DataTypes.STRING
     },
     tonelaje:{
-        type:DataTypes.DECIMAL
+        type:DataTypes.STRING
     },
     ticket:{
         type:DataTypes.STRING
